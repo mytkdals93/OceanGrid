@@ -16,7 +16,7 @@ type Data struct {
 
 func main() {
 
-	f, err := excelize.OpenFile("data.xlsx")
+	f, err := excelize.OpenFile("origin.xlsx")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -45,7 +45,6 @@ func main() {
 			num, _ := strconv.Atoi(s[2])
 			data := Data{timeFormat(date) + s[0], s[1], num}
 			datas = append(datas, data)
-			fmt.Print(data, "\n")
 		}
 
 	}
